@@ -1,0 +1,30 @@
+{
+    "name": "Nofake : Vérifie tes feeds",
+    "description": "No fake permet d'apporter des informations sur les contenus partagés dans tes feeds de réseaux sociaux pour t'indiquer ceux qui sont fakes. No fake permet également de noter la véracité des articles que tu lis.",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "storage",
+        "activeTab",
+        "scripting"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.twitter.com/*"
+            ],
+            "css": [
+                "twitter.css"
+            ],
+            "js": [
+                "twitter.js"
+            ]
+        }
+    ]
+}
