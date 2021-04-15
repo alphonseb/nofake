@@ -1,6 +1,6 @@
 # No Fake
 
-A chrome extension to check for reported fake news shared your social medias.
+A chrome extension to check for reported fake news shared on your social medias.
 
 ### Supported Medias (as of 15/04/2021)
 - Twitter
