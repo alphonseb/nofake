@@ -21,16 +21,36 @@ const checkLink = (link) => {
                 
                 switch (data.status) {
                     case 'good':
-                        parent.style.border = 'solid 3px green'
+                        parent.classList.add('flag--good')
                         break;
                         
                     case 'warning':
-                        parent.style.border = 'solid 3px orange'
+                        parent.classList.add('flag--warn')
                         break;
                     
                     case 'fake':
-                        parent.style.border = 'solid 3px red'
-                        parent.style.filter = 'blur(10px)'
+                        parent.classList.add('flag--fake')
+                        parent.classList.add('flag--fake--blurred')
+                        const popup = document.createElement('div')
+                        popup.classList.add('nofake__popup')
+                        const image = document.createElement("img");
+                        image.src = chrome.runtime.getURL("img/logo.png");
+                        const div = document.createElement('div')
+                        div.appendChild(image)
+                        popup.appendChild(div)
+                        popup.insertAdjacentHTML('beforeend',  `
+                            <h4>Contenu fake détecté !</h4>
+                            <p>Nous l'avons bloqué pour vous</p>
+                        `)
+                        const button = document.createElement('button')
+                        button.textContent = 'Afficher quand même'
+                        button.addEventListener('click', () => {
+                            console.log('click');
+                            parent.classList.remove('flag--fake--blurred')
+                            popup.remove()
+                        })
+                        popup.appendChild(button)
+                        parent.parentNode.appendChild(popup)
                         break;
                 }
             } else {
@@ -52,16 +72,36 @@ const checkLink = (link) => {
                 
                 switch (data.status) {
                     case 'good':
-                        parent.style.border = 'solid 3px green'
+                        parent.classList.add('flag--good')
                         break;
                         
                     case 'warning':
-                        parent.style.border = 'solid 3px orange'
+                        parent.classList.add('flag--warn')
                         break;
                     
                     case 'fake':
-                        parent.style.border = 'solid 3px red'
-                        parent.style.filter = 'blur(10px)'
+                        parent.classList.add('flag--fake')
+                        parent.classList.add('flag--fake--blurred')
+                        const popup = document.createElement('div')
+                        popup.classList.add('nofake__popup')
+                        const image = document.createElement("img");
+                        image.src = chrome.runtime.getURL("img/logo.png");
+                        const div = document.createElement('div')
+                        div.appendChild(image)
+                        popup.appendChild(div)
+                        popup.insertAdjacentHTML('beforeend',  `
+                            <h4>Contenu fake détecté !</h4>
+                            <p>Nous l'avons bloqué pour vous</p>
+                        `)
+                        const button = document.createElement('button')
+                        button.textContent = 'Afficher quand même'
+                        button.addEventListener('click', () => {
+                            console.log('click');
+                            parent.classList.remove('flag--fake--blurred')
+                            popup.remove()
+                        })
+                        popup.appendChild(button)
+                        parent.parentNode.appendChild(popup)
                         break;
                 }
             } else {

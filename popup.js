@@ -4,7 +4,9 @@ nofake_form.addEventListener('submit', async (e) => {
     console.log(isFake);
     
     let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-    console.log(tab);
+    if (tab.url.includes('twitter.com')) {
+        document.querySelector('.legend#url').textContent = tab.url
+    }
     chrome.scripting.executeScript({
         target: { tabId: tab.id },
         function: () => {

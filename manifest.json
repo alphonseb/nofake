@@ -14,6 +14,16 @@
         "activeTab",
         "scripting"
     ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "/img/logo.png"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ],
     "content_scripts": [
         {
             "matches": [
@@ -26,5 +36,8 @@
                 "twitter.js"
             ]
         }
-    ]
+    ],
+    "icons": {
+        "48": "img/icon.png"
+    }
 }

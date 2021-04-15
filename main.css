@@ -1,0 +1,81 @@
+@font-face {
+    font-family: 'Avenir Bold';
+    src: url(fonts/avenir/AvenirBold.woff2) format("woff2"),
+        url(fonts/avenir/AvenirBold.woff) format("woff")
+}
+
+@font-face {
+    font-family: 'Avenir SemiBold';
+    src: url(fonts/avenir/AvenirSemiBold.woff2) format("woff2"),
+        url(fonts/avenir/AvenirSemiBold.woff) format("woff")
+}
+
+body {
+    padding: 16px;
+    min-width: 350px;
+    font-family: 'Roboto';
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+h1, h2, h3, h4, p {
+    margin-top: 0;
+}
+
+.t-h1, .t-h2 {
+    font-family: 'Avenir Bold';
+}
+
+.t-h3, .t-h4 {
+    font-family: 'Avenir SemiBold';
+}
+
+.logo {
+    margin-bottom: 16px;
+}
+
+.submit {
+    display: block;
+    padding: 12px 16px;
+    background-color: #27AE61;
+    color: white;
+    text-align: center;
+    font-family: inherit;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    margin-top: 32px;
+    cursor: pointer;
+}
+
+.legend {
+    font-size: 12px;
+    color: #828282;
+}
+
+.flag {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    margin-right: 8px;
+}
+
+.flag--good {
+    background-color: #57CE7E;
+}
+
+.flag--warn {
+    background-color: #FAAE00;
+}
+
+.flag--fake {
+    background-color: #E03271;
+}
+
+.aic {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}

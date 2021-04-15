@@ -4,22 +4,28 @@
 <head>
     <link rel="stylesheet" href="main.css">
     <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script src="head.js"></script>
 </head>
 
 <body>
+    <img src="img/logo.png" alt="No fake" class="logo">
     <div class="content">
-        <h1>NoFake</h1>
         <p>Tu n'es pas sur un réseau social.</p>
-        <h2>Note cette page !</h2>
-        <h3 id="page_title"></h3>
+        <h2 class="t-h2">Note cette page !</h2>
+        <h3 class="t-h3" id="page_title"></h3>
         <div id="result">
             <form action="#" id="nofake_form">
-                <label for="fake">Fake</label>
-                <input required type="radio" name="rating" value="fake" id="fake">
-                <label for="fake">No Fake</label>
-                <input required type="radio" name="rating" value="nofake" id="nofake">
-                <input type="submit" value="J'envoie">
+                <div style="margin-bottom: 16px;">
+                    <input required type="radio" name="rating" value="fake" id="fake">
+                    <label for="fake">Fake</label>
+                </div>
+                <div>
+                    <input required type="radio" name="rating" value="nofake" id="nofake">
+                    <label for="fake">No Fake</label>
+                </div>
+                <input class="submit" type="submit" value="Soumettre mon évaluation">
             </form>
         </div>
     </div>
